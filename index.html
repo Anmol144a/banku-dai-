@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Memory of Shreeyam Chaulagain</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://raw.githubusercontent.com/banku-dai/images/main/background') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .book {
+            width: 90%;
+            max-width: 800px;
+            height: 100vh; /* Adjusted to match the full height of the images */
+            max-height: 900px; /* Based on the image proportions */
+            position: relative;
+            perspective: 1200px;
+            overflow: hidden;
+            margin: 10px;
+        }
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+            border-left: 1px solid #444;
+            transform-origin: left;
+            transition: transform 0.8s ease;
+        }
+        .page.active {
+            display: block;
+            transform: rotateY(0deg);
+        }
+        .page.next {
+            transform: rotateY(30deg);
+            z-index: 1;
+        }
+        .page.prev {
+            transform: rotateY(-30deg);
+            z-index: 1;
+        }
+        .cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://raw.githubusercontent.com/banku-dai/images/main/first%20page') no-repeat center;
+            background-size: contain;
+            z-index: 10;
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        p {
+            line-height: 1.5;
+            font-size: 1em;
+            text-align: center;
+            color: #fff;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+        .strong {
+            color: #ff4500;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .arrow-btn {
+            background: #ffedd5;
+            color: #ff4500;
+            border: 2px solid #ff4500;
+            padding: 8px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2em;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow-btn:disabled {
+            background: #666;
+            color: #999;
+            border-color: #999;
+            cursor: not-allowed;
+        }
+        @media (max-width: 600px) {
+            .book {
+                width: 95%;
+                height: 80vh;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .arrow-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page cover" id="page0"></div>
+        <div class="page" id="page1">
+            <h1>LIGHT OF HIS FAMILY</h1>
+            <p><span class="strong">TO HIS FAMILY, HE WAS BANKU.</span></p>
+            <p>IT WAS THE NAME THEY CALLED HIM AT HOME, THE NAME THAT HELD THEIR LOVE. SHREEYAM CHAULAGAIN WAS A FRIENDLY AND MATURE KIND OF SON WHO UNDERSTOOD THE WORLD MORE THAN HIS 17 YEARS WOULD SUGGEST.</p>
+            <p>HE WAS A YOUNG MAN JUST BEGINNING TO BUILD HIMSELF. AFTER FINISHING 10TH GRADE, HE FOUND A PASSION FOR THE GYM, SHAPING HIS BODY WITH THE SAME DISCIPLINE HE APPLIED TO EVERYTHING ELSE.</p>
+        </div>
+        <div class="page" id="page2">
+            <h1>HIS DREAMS AND LOVE</h1>
+            <p>HE LOVED FOOTBALL AND BASKETBALL. WHILE STUDYING IN GRADE 12 AT GLOBAL COLLEGE IN KATHMANDU, HE WAS ALREADY TEACHING HIMSELF GERMAN AT HOME, DREAMING OF A FUTURE IN GERMANY.</p>
+            <p>HE GREW UP IN HIS MAMAGHAR IN ITAHARI, SURROUNDED BY COUSINS WHO WERE MORE LIKE HIS SIBLINGS. HE WAS THE GLUE THAT HELD THEM TOGETHER.</p>
+            <p>HE THEN MOVED TO KATHMANDU FOR HIS 11TH AND 12TH. IN KATHMANDU, HE LIVED WITH HIS PARENTS, HIS SISTER LIVED ABROAD AND HIS HEART BELONGED TO HIS DOG, JOJO.</p>
+        </div>
+        <div class="page" id="page3">
+            <h1>A MARTYR'S RESOLVE</h1>
+            <p>WHEN THE PROTESTS BEGAN, HIS FAMILY BEGGED HIM NOT TO GO. "JUST WATCH TODAY, YOU CAN GO TOMORROW," THEY TOLD HIM.</p>
+            <p>"IF I BECOME A MARTYR FIGHTING FOR MY COUNTRY, TO END CORRUPTION, THEN SO BE IT," HE SAID TO THEM.</p>
+            <p>ON 8TH SEPTEMBER, HE WENT TO THE PROTEST IN HIS COLLEGE UNIFORM, DIRECTLY AFTER HIS CLASSES ENDED.</p>
+        </div>
+        <div class="page" id="page4">
+            <h1>HIS FINAL MOMENT</h1>
+            <p>HE WASN’T THROWING STONES OR GIVING SPEECHES. HE WAS SIMPLY ON THE ROAD, WALKING, SMILING AND CLAPPING, A CURIOUS TEENAGER WATCHING HISTORY UNFOLD. AS HE WALKED, IN AN INSTANT, A BULLET STRUCK HIM IN THE BACK OF HIS HEAD.</p>
+            <p><span class="strong">BEFORE A MARTYR,</span></p>
+            <p>SHREEYAM WAS A SON, A BROTHER, A LOVED COUSIN, A FRIEND, A STUDENT. HE WAS A LIFE YET TO BE LIVED, FULL OF PROMISES.</p>
+        </div>
+        <div class="page" id="page5">
+            <h1>MORE THAN JUST A NAME</h1>
+            <p><span class="strong">MORE THAN JUST A NAME</span></p>
+            <p>SHREEYAM CHAULAGAIN</p>
+            <p>THIS STORY IS WRITTEN BASED ON THE LOVING MEMORIES OF HIS FAMILY.</p>
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button class="arrow-btn" id="prevBtn" disabled>&larr;</button>
+        <button class="arrow-btn" id="nextBtn">&rarr;</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 5;
+        const pages = document.querySelectorAll('.page');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showPage(pageNum) {
+            pages.forEach(page => {
+                page.classList.remove('active', 'next', 'prev');
+                page.style.transform = 'rotateY(0deg)';
+            });
+            const activePage = document.getElementById(`page${pageNum}`);
+            activePage.classList.add('active');
+            if (pageNum > 0) {
+                document.getElementById(`page${pageNum - 1}`).classList.add('prev');
+            }
+            if (pageNum < totalPages) {
+                document.getElementById(`page${pageNum + 1}`).classList.add('next');
+            }
+            prevBtn.disabled = pageNum === 0;
+            nextBtn.disabled = pageNum === totalPages;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+        showPage(currentPage);
+    </script>
+</body>
+</html>
